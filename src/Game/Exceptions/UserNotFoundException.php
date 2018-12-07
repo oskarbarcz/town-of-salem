@@ -1,4 +1,5 @@
-/*!
+<?php
+/**
  * ArchFramework (ArchFW in short) is universal template for server-side rendered applications and services.
  * ArchFW comes with pre-installed router and JSON API functionality.
  * Visit https://github.com/archi-tektur/ArchFW/ for more info.
@@ -13,21 +14,11 @@
  * @version   2.7.0
  * @link      https://github.com/archi-tektur/ArchFW/
  */
-.gui-container {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
 
-    .gui-box {
-        @include shadow(2);
-        width: 320px;
-        min-height: 50px;
-        max-height: 70vh;
-        background: rgba(230, 230, 230, 0.8);
-        padding: 10px;
-        margin: 2px;
-        text-align: justify;
-    }
+namespace Game\Exceptions;
 
+use ArchFW\Exceptions\ArchFWException;
+
+class UserNotFoundException extends ArchFWException
+{
 }

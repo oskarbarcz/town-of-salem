@@ -41,10 +41,13 @@ Contains all basic usage elements
 'base/typography',
 'base/environment';
 /* LAYOUT */
+@import "layout/box";
 /* PAGES */
 @import "pages/installscreen";
 /* COMPONENTS */
-@import "components/box";
 @import "components/menu";
+@import "components/footing";
+@import "components/login-choose";
+@import "components/login";
 /* THEMES */
 

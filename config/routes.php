@@ -31,13 +31,24 @@ return [
      */
     'routingPaths'         => [
         'application' => [
-            '' => [
+            ''             => [
                 'class'    => 'Menu',
+                'template' => 'index.twig',
+            ],
+            'login-choose' => [
+                'class'    => 'DefaultHTMLRenderer',
+                'template' => 'login-choose.twig',
+            ],
+            'login'        => [
+                'class'    => 'LoginScreen',
+                'template' => 'login.twig',
+            ],
+            'logoff'       => [
+                'class'    => 'Logoff',
                 'template' => 'index.twig',
             ],
         ],
         'api'         => [
-            'routerTest' => 'RouterTest',
         ],
     ],
 

@@ -1,0 +1,21 @@
+{% include "common/header.twig" %}
+
+<div class="gui-container">
+    <div class="gui-box">
+        <h2>Logowanie</h2>
+        <form class="login-form" method="post" action="/login">
+            <label for="login">Login</label>
+            <input name="login" id="login" type="text" placeholder="login" required>
+            <label for="password">Password</label>
+            <input name="password" id="password" type="password" placeholder="password" required>
+            <button type="submit">Zaloguj<span class="fas fa-chevron-right"></span></button>
+        </form>
+    </div>
+    {% if error %}
+        <div class="gui-box error">
+            <span>{{error}}</span>
+        </div>
+    {% endif %}
+    {% include "common/footing.twig" %}
+</div>
+{% include "common/footer.twig" %}

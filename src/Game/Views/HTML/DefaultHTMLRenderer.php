@@ -1,4 +1,5 @@
-/*!
+<?php
+/**
  * ArchFramework (ArchFW in short) is universal template for server-side rendered applications and services.
  * ArchFW comes with pre-installed router and JSON API functionality.
  * Visit https://github.com/archi-tektur/ArchFW/ for more info.
@@ -14,17 +15,19 @@
  * @link      https://github.com/archi-tektur/ArchFW/
  */
 
-.footing {
-    display: flex;
-    justify-content: center;
-    align-content: center;
-    padding: 20px;
+namespace Game\Views\HTML;
 
-    .title {
-        color: #f89e30;
-        font-family: "PT Sans", sans-serif;
-        font-size: 26px;
-        text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.8);
-        font-weight: bold;
+use ArchFW\Views\Renderers\HTMLRenderer;
+
+/**
+ * Class DefaultRenderer
+ *
+ * @package Game\Views\HTML
+ */
+final class DefaultHTMLRenderer extends HTMLRenderer
+{
+    public function __construct()
+    {
+        echo parent::render([]);
     }
 }

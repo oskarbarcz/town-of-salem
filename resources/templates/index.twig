@@ -1,19 +1,18 @@
 {% include "common/header.twig" %}
 
 <div class="gui-container">
-    <div class="gui-box">
-        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Beatae delectus, dolor doloribus exercitationem,
-            fuga, harum hic impedit inventore ipsam laborum magnam.</p>
+    <section class="gui-box">
+        <p class="description">Historia trzech postaci wrzuconych w nieprzewidywalny wir wydarzeń. Co tak na prawdę
+            wydarzyło się w
+            Salem? Jak skończy się historia miasteczka?</p>
         <div class="menu">
-            <a class="link-as-button" href="">Opcja 1</a>
-            <a class="link-as-button" href="">Opcja 1</a>
-            <a class="link-as-button" href="">Opcja 1</a>
-            <a class="link-as-button" href="">Opcja 1</a>
+            <a class="link-as-button" href="/login-choose">Zagraj</a>
+            <a class="link-as-button" href="/about">O grze</a>
+            <a class="link-as-button" href="/authors">Autorzy</a>
+            <a class="link-as-button" href="https://github.com/archi-tektur/TownOfSalem">Kod źródłowy</a>
         </div>
-    </div>
-    <div class="gui-box">
-        <span class="title">archi_tektur</span>
-    </div>
+    </section>
+    {% include "common/footing.twig" %}
 </div>
 
 {% include "common/footer.twig" %}

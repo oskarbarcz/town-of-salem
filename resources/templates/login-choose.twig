@@ -1,0 +1,19 @@
+{% include "common/header.twig" %}
+
+<div class="gui-container">
+    <div class="gui-box">
+        <span class="description-smaller">Aby kontynuować, wybierz jedno z poniższych:</span>
+        <div class="login-choose">
+            <a class="select" href="/login">
+                <span class="icon fas fa-sign-in-alt"></span>
+                <span class="description">Zaloguj się</span>
+            </a>
+            <a class="select" href="/register">
+                <span class="icon fas fa-user-plus"></span>
+                <span class="description">Zarejestruj się</span>
+            </a>
+        </div>
+    </div>
+    {% include "common/footing.twig" %}
+</div>
+{% include "common/footer.twig" %}

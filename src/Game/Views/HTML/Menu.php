@@ -17,7 +17,6 @@
 
 namespace Game\Views\HTML;
 
-use ArchFW\Interfaces\Renderable;
 use ArchFW\Views\Renderers\HTMLRenderer;
 
 /**
@@ -25,24 +24,18 @@ use ArchFW\Views\Renderers\HTMLRenderer;
  *
  * @package ArchFW\Views\HTMLViews
  */
-class Menu extends HTMLRenderer implements Renderable
+final class Menu extends HTMLRenderer
 {
+    /**
+     * Menu constructor.
+     *
+     * @throws \ArchFW\Exceptions\NoFileFoundException
+     * @throws \Twig_Error_Loader
+     * @throws \Twig_Error_Runtime
+     * @throws \Twig_Error_Syntax
+     */
     public function __construct()
     {
-        echo parent::render(
-            [
-                'version' => $this->getVersion(),
-            ]
-        );
-    }
-
-    /**
-     * Returns current framework version. Test function.
-     *
-     * @return string
-     */
-    private function getVersion(): string
-    {
-        return '2.7.0';
+        echo parent::render([]);
     }
 }

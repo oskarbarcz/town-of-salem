@@ -1,4 +1,4 @@
-@import url(https://fonts.googleapis.com/css?family=Signika+Negative);/*!
+@import url(https://fonts.googleapis.com/css?family=Signika+Negative|PT+Sans);/*!
  * ArchFramework (ArchFW in short) is universal template for server-side rendered applications and services.
  * ArchFW comes with pre-installed router and JSON API functionality.
  * Visit https://github.com/archi-tektur/ArchFW/ for more info.
@@ -110,6 +110,20 @@
  * @license   MIT https://opensource.org/licenses/MIT
  * @version   2.7.0
  * @link      https://github.com/archi-tektur/ArchFW/
+ */.gui-container{display:-webkit-box;display:-ms-flexbox;display:flex;-webkit-box-pack:center;-ms-flex-pack:center;justify-content:center;-webkit-box-align:center;-ms-flex-align:center;align-items:center;-webkit-box-orient:vertical;-webkit-box-direction:normal;-ms-flex-direction:column;flex-direction:column}.gui-container .gui-box{-webkit-box-shadow:0 3px 6px rgba(0,0,0,.16),0 3px 6px rgba(0,0,0,.23);box-shadow:0 3px 6px rgba(0,0,0,.16),0 3px 6px rgba(0,0,0,.23);width:320px;min-height:50px;max-height:70vh;background:rgba(230,230,230,.8);padding:10px;margin:2px;text-align:justify}.gui-container .gui-box .description{display:block;width:270px;margin:0 auto;font-size:20px}.gui-container .gui-box .description-smaller{display:block;width:240px;margin:5px auto 0;font-size:16px}.gui-container .gui-box h2{font-size:26px;margin:5px 10px 10px 10px;text-align:center;font-weight:700}.gui-container .gui-box.error{text-align:center;line-height:1.8;background:#f89e30;color:#fefefe}/*!
+ * ArchFramework (ArchFW in short) is universal template for server-side rendered applications and services.
+ * ArchFW comes with pre-installed router and JSON API functionality.
+ * Visit https://github.com/archi-tektur/ArchFW/ for more info.
+ *
+ * PHP version 7.2
+ *
+ * @category  Framework/Boilerplate
+ * @package   ArchFW
+ * @author    Oskar 'archi-tektur' Barcz <kontakt@archi-tektur.pl>
+ * @copyright 2018 Oskar 'archi_tektur' Barcz
+ * @license   MIT https://opensource.org/licenses/MIT
+ * @version   2.7.0
+ * @link      https://github.com/archi-tektur/ArchFW/
  */.main-info{padding:20px}.main-info h1{font-size:40px;padding-top:50px}.main-info p{padding:30px}.bottom-navigation{margin-top:calc(80vh - 200px)}.bottom-navigation .divider{color:#444;margin:15px}.bottom-navigation .bold{font-weight:bolder}/*!
  * ArchFramework (ArchFW in short) is universal template for server-side rendered applications and services.
  * ArchFW comes with pre-installed router and JSON API functionality.
@@ -124,7 +138,7 @@
  * @license   MIT https://opensource.org/licenses/MIT
  * @version   2.7.0
  * @link      https://github.com/archi-tektur/ArchFW/
- */.gui-container{display:-webkit-box;display:-ms-flexbox;display:flex;-webkit-box-pack:center;-ms-flex-pack:center;justify-content:center;-webkit-box-align:center;-ms-flex-align:center;align-items:center;-webkit-box-orient:vertical;-webkit-box-direction:normal;-ms-flex-direction:column;flex-direction:column}.gui-container .gui-box{-webkit-box-shadow:0 3px 6px rgba(0,0,0,.16),0 3px 6px rgba(0,0,0,.23);box-shadow:0 3px 6px rgba(0,0,0,.16),0 3px 6px rgba(0,0,0,.23);width:320px;min-height:50px;max-height:70vh;background:rgba(230,230,230,.8);padding:10px;margin:2px;text-align:justify}/*!
+ */.menu{display:-webkit-box;display:-ms-flexbox;display:flex;-webkit-box-pack:center;-ms-flex-pack:center;justify-content:center;-ms-flex-wrap:wrap;flex-wrap:wrap;-webkit-box-orient:vertical;-webkit-box-direction:normal;-ms-flex-direction:column;flex-direction:column;margin-top:5px}.menu .link-as-button{background:#fefefe;margin:2px auto;border-bottom:3px #f89e30 solid;border-radius:2px;width:250px;text-align:center;padding:7px;text-decoration:none;color:#444;-webkit-transition:all 50ms ease-in-out;transition:all 50ms ease-in-out}.menu .link-as-button:hover{background:#f89e30;color:#fefefe}/*!
  * ArchFramework (ArchFW in short) is universal template for server-side rendered applications and services.
  * ArchFW comes with pre-installed router and JSON API functionality.
  * Visit https://github.com/archi-tektur/ArchFW/ for more info.
@@ -138,4 +152,32 @@
  * @license   MIT https://opensource.org/licenses/MIT
  * @version   2.7.0
  * @link      https://github.com/archi-tektur/ArchFW/
- */.menu{display:-webkit-box;display:-ms-flexbox;display:flex;-webkit-box-pack:center;-ms-flex-pack:center;justify-content:center;-ms-flex-wrap:wrap;flex-wrap:wrap;-webkit-box-orient:vertical;-webkit-box-direction:normal;-ms-flex-direction:column;flex-direction:column;margin-top:20px}.menu .link-as-button{background:#fefefe;margin:2px auto;border-bottom:3px #f89e30 solid;border-radius:2px;width:250px;text-align:center;padding:7px;text-decoration:none;color:#444;-webkit-transition:all 50ms ease-in-out;transition:all 50ms ease-in-out}.menu .link-as-button:hover{background:#f89e30;color:#fefefe}
+ */.footing{display:-webkit-box;display:-ms-flexbox;display:flex;-webkit-box-pack:center;-ms-flex-pack:center;justify-content:center;-ms-flex-line-pack:center;align-content:center;padding:20px}.footing .title{color:#f89e30;font-family:"PT Sans",sans-serif;font-size:26px;text-shadow:1px 1px 2px rgba(0,0,0,.8);font-weight:700}/*!
+ * ArchFramework (ArchFW in short) is universal template for server-side rendered applications and services.
+ * ArchFW comes with pre-installed router and JSON API functionality.
+ * Visit https://github.com/archi-tektur/ArchFW/ for more info.
+ *
+ * PHP version 7.2
+ *
+ * @category  Framework/Boilerplate
+ * @package   ArchFW
+ * @author    Oskar 'archi-tektur' Barcz <kontakt@archi-tektur.pl>
+ * @copyright 2018 Oskar 'archi_tektur' Barcz
+ * @license   MIT https://opensource.org/licenses/MIT
+ * @version   2.7.0
+ * @link      https://github.com/archi-tektur/ArchFW/
+ */.login-choose{display:-webkit-box;display:-ms-flexbox;display:flex;-webkit-box-orient:horizontal;-webkit-box-direction:normal;-ms-flex-direction:row;flex-direction:row;-webkit-box-pack:center;-ms-flex-pack:center;justify-content:center}.login-choose .select{color:#444;width:120px;display:block;margin:0 5px 5px 5px;padding:5px;text-decoration:none;text-align:center;-webkit-transition:.1s all ease-in-out;transition:.1s all ease-in-out}.login-choose .select .icon{color:inherit;font-size:40px;margin:16px;width:auto}.login-choose .select .description{display:block;font-size:18px;width:auto}.login-choose .select:hover{color:#f89e30}/*!
+ * ArchFramework (ArchFW in short) is universal template for server-side rendered applications and services.
+ * ArchFW comes with pre-installed router and JSON API functionality.
+ * Visit https://github.com/archi-tektur/ArchFW/ for more info.
+ *
+ * PHP version 7.2
+ *
+ * @category  Framework/Boilerplate
+ * @package   ArchFW
+ * @author    Oskar 'archi-tektur' Barcz <kontakt@archi-tektur.pl>
+ * @copyright 2018 Oskar 'archi_tektur' Barcz
+ * @license   MIT https://opensource.org/licenses/MIT
+ * @version   2.7.0
+ * @link      https://github.com/archi-tektur/ArchFW/
+ */.login-form{display:-webkit-box;display:-ms-flexbox;display:flex;-webkit-box-orient:vertical;-webkit-box-direction:normal;-ms-flex-direction:column;flex-direction:column;-webkit-box-pack:center;-ms-flex-pack:center;justify-content:center}.login-form label{display:none}.login-form button[type=submit],.login-form input{-webkit-box-shadow:0 1px 3px rgba(0,0,0,.12),0 1px 2px rgba(0,0,0,.24);box-shadow:0 1px 3px rgba(0,0,0,.12),0 1px 2px rgba(0,0,0,.24);font-family:"Signika Negative",sans-serif;font-size:16px;width:240px;margin:2px auto;background:#fefefe;outline:0;border:none;border-bottom:3px #f89e30 solid;text-align:center;padding:6px;border-radius:5px;-webkit-transition:all 50ms ease-in-out;transition:all 50ms ease-in-out;color:#444}.login-form button[type=submit] button[type=submit],.login-form button[type=submit][type=submit],.login-form input button[type=submit],.login-form input[type=submit]{padding:7px 4px 4px 4px;background:#f89e30;color:#fefefe;position:relative}.login-form button[type=submit] button[type=submit] span,.login-form button[type=submit][type=submit] span,.login-form input button[type=submit] span,.login-form input[type=submit] span{position:absolute;top:9px;right:20px}.login-form button[type=submit] button[type=submit]:hover,.login-form button[type=submit][type=submit]:hover,.login-form input button[type=submit]:hover,.login-form input[type=submit]:hover{color:#f1f1f1}.login-form button[type=submit]:hover,.login-form input:hover{-webkit-box-shadow:0 3px 6px rgba(0,0,0,.16),0 3px 6px rgba(0,0,0,.23);box-shadow:0 3px 6px rgba(0,0,0,.16),0 3px 6px rgba(0,0,0,.23)}.login-form button[type=submit]:focus,.login-form input:focus{background:rgba(255,163,49,.2)}
