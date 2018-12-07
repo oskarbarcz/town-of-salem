@@ -13,28 +13,21 @@
  * @version   2.7.0
  * @link      https://github.com/archi-tektur/ArchFW/
  */
-* {
-    box-sizing: border-box;
-}
-
-html {
-    height: 100%;
-    width: 100%;
-}
-
-body {
-    background: url("/img/backgrounds/kozle-blurred.jpg") center center fixed;
-    background-size: cover;
-    color: #444444;
-
-    font-family: 'Signika Negative', sans-serif;
-
-    height: 100%;
-    text-align: center;
-    width: 100%;
-
+.gui-container {
     display: flex;
     justify-content: center;
     align-items: center;
+    flex-direction: column;
+
+    .gui-box {
+        @include shadow(2);
+        width: 320px;
+        min-height: 50px;
+        max-height: 70vh;
+        background: rgba(230, 230, 230, 0.8);
+        padding: 10px;
+        margin: 2px;
+        text-align: justify;
+    }
 
 }
