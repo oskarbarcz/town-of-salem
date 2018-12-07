@@ -22,8 +22,8 @@ return [
      * With below routingPaths it should create Full Qualified class name to be called.
      */
     'safeClassCalloutPath' => [
-        'application' => 'ArchFW\Views\HTMLViews',
-        'api'         => 'ArchFW\Views\JSONViews',
+        'application' => 'Game\Views\HTML',
+        'api'         => 'Game\Views\API',
     ],
 
     /*
@@ -32,7 +32,7 @@ return [
     'routingPaths'         => [
         'application' => [
             '' => [
-                'class'    => 'InitialScreen',
+                'class'    => 'Menu',
                 'template' => 'index.twig',
             ],
         ],

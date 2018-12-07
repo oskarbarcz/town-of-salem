@@ -15,7 +15,7 @@
  * @link      https://github.com/archi-tektur/ArchFW/
  */
 
-namespace ArchFW\Views\HTMLViews;
+namespace Game\Views\HTML;
 
 use ArchFW\Interfaces\Renderable;
 use ArchFW\Views\Renderers\HTMLRenderer;
@@ -25,7 +25,7 @@ use ArchFW\Views\Renderers\HTMLRenderer;
  *
  * @package ArchFW\Views\HTMLViews
  */
-class InitialScreen extends HTMLRenderer implements Renderable
+class Menu extends HTMLRenderer implements Renderable
 {
     public function __construct()
     {
