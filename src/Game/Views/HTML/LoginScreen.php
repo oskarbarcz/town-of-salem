@@ -18,16 +18,16 @@
 namespace Game\Views\HTML;
 
 use ArchFW\Controllers\Storage\SessionStorage;
-use ArchFW\Views\Renderers\HTMLRenderer;
 use Game\Controllers\Account;
 use Game\Exceptions\UserNotFoundException;
+use Game\Views\HTML\Workers\AccountCheckHTMLRenderer;
 
 /**
  * Class LoginScreen
  *
  * @package Game\Views\HTML
  */
-final class LoginScreen extends HTMLRenderer
+final class LoginScreen extends AccountCheckHTMLRenderer
 {
     private $failed;
 
@@ -42,7 +42,7 @@ final class LoginScreen extends HTMLRenderer
     public function __construct()
     {
         // redirect actually logged users
-        if (SessionStorage::exist('User') and SessionStorage::get('User') instanceof Account) {
+        if (parent::logged()) {
             header('Location: /');
         }
 

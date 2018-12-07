@@ -1,0 +1,81 @@
+/*!
+ * ArchFramework (ArchFW in short) is universal template for server-side rendered applications and services.
+ * ArchFW comes with pre-installed router and JSON API functionality.
+ * Visit https://github.com/archi-tektur/ArchFW/ for more info.
+ *
+ * PHP version 7.2
+ *
+ * @category  Framework/Boilerplate
+ * @package   ArchFW
+ * @author    Oskar 'archi-tektur' Barcz <kontakt@archi-tektur.pl>
+ * @copyright 2018 Oskar 'archi_tektur' Barcz
+ * @license   MIT https://opensource.org/licenses/MIT
+ * @version   2.7.0
+ * @link      https://github.com/archi-tektur/ArchFW/
+ */
+.userbox {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    align-items: center;
+
+    .button {
+        @include shadow(1);
+        border: 3px solid #f89e30;
+        background: #444;
+        border-radius: 100%;
+        padding: 8px;
+        margin-left: 40px;
+        display: block;
+        width: 40px;
+        height: 40px;
+        font-size: 20px;
+        color: #f89e30;
+        transition: all ease-in-out 0.05s;
+        text-align: center;
+
+        &:hover {
+            transform: scale(1.05);
+            @include shadow(2);
+            background: #FEFEFE;
+            color: #444;
+            border: 3px solid #444;
+        }
+    }
+
+    .details {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        text-align: center;
+
+        .login {
+            margin-bottom: 10px;
+            font-size: 18px;
+            font-weight: bold;
+        }
+
+        .progress {
+            &-icon {
+                @include shadow(1);
+                background: #444444;
+                color: #FEFEFE;
+                user-select: none;
+                padding: 5px;
+                display: inline-block;
+                width: 25px;
+                height: 25px;
+                border-radius: 100%;
+
+                &.current {
+                    background: red;
+                }
+
+                &.done {
+                    background: #f89e30;
+
+                }
+            }
+        }
+    }
+}

@@ -1,12 +1,16 @@
 {% include "common/header.twig" %}
 
 <div class="gui-container">
+    {# Incluse user box bar only if user is logged in #}
+    {% if userData %}
+        {% include "common/userbox.twig" %}
+    {% endif %}
     <section class="gui-box">
         <p class="description">Historia trzech postaci wrzuconych w nieprzewidywalny wir wydarzeń. Co tak na prawdę
             wydarzyło się w
             Salem? Jak skończy się historia miasteczka?</p>
         <div class="menu">
-            <a class="link-as-button" href="/login-choose">Zagraj</a>
+            <a class="link-as-button" href="{{button.link}}">{{button.title}}</a>
             <a class="link-as-button" href="/about">O grze</a>
             <a class="link-as-button" href="/authors">Autorzy</a>
             <a class="link-as-button" href="https://github.com/archi-tektur/TownOfSalem">Kod źródłowy</a>

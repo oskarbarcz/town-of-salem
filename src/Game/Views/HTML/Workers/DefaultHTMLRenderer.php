@@ -15,7 +15,7 @@
  * @link      https://github.com/archi-tektur/ArchFW/
  */
 
-namespace Game\Views\HTML;
+namespace Game\Views\HTML\Workers;
 
 use ArchFW\Views\Renderers\HTMLRenderer;
 

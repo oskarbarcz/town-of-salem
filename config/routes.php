@@ -36,7 +36,7 @@ return [
                 'template' => 'index.twig',
             ],
             'login-choose' => [
-                'class'    => 'DefaultHTMLRenderer',
+                'class'    => 'Workers\DefaultHTMLRenderer',
                 'template' => 'login-choose.twig',
             ],
             'login'        => [

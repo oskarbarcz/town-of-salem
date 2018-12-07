@@ -17,14 +17,14 @@
 
 namespace Game\Views\HTML;
 
-use ArchFW\Views\Renderers\HTMLRenderer;
+use Game\Views\HTML\Workers\AccountCheckHTMLRenderer;
 
 /**
  * Class InitialScreen
  *
  * @package ArchFW\Views\HTMLViews
  */
-final class Menu extends HTMLRenderer
+final class Menu extends AccountCheckHTMLRenderer
 {
     /**
      * Menu constructor.
@@ -36,6 +36,39 @@ final class Menu extends HTMLRenderer
      */
     public function __construct()
     {
-        echo parent::render([]);
+        $this->compose();
+    }
+
+    /**
+     * Composes the answer
+     *
+     * @throws \ArchFW\Exceptions\NoFileFoundException
+     * @throws \Twig_Error_Loader
+     * @throws \Twig_Error_Runtime
+     * @throws \Twig_Error_Syntax
+     */
+    private function compose()
+    {
+        if (parent::logged()) {
+            echo parent::render(
+                [
+                    'userData' => parent::data(),
+                    'button'   => [
+                        'title' => 'Kontynuuj rozgrywkę',
+                        'link'  => '/startAct',
+                    ],
+                ]
+            );
+        } else {
+            echo parent::render(
+                [
+                    'button' => [
+                        'title' => 'Zacznij grę',
+                        'link'  => '/login-choose',
+                    ],
+
+                ]
+            );
+        }
     }
 }
