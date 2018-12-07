@@ -41,6 +41,11 @@ final class LoginScreen extends HTMLRenderer
      */
     public function __construct()
     {
+        // redirect actually logged users
+        if (SessionStorage::exist('User') and SessionStorage::get('User') instanceof Account) {
+            header('Location: /');
+        }
+
         // if user filled the form
         if (isset($_POST['login'], $_POST['password'])) {
             $this->catchLoginFail($_POST['login'], $_POST['password']);

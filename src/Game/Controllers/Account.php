@@ -79,6 +79,7 @@ class Account
                 101
             );
         }
+        $this->updateLLT();
         return $result;
     }
 
@@ -90,6 +91,20 @@ class Account
     public function getUserData(): ?array
     {
         return ($this->userData) ? $this->userData : null;
+    }
+
+    /**
+     * Updates last login time in database
+     */
+    private function updateLLT()
+    {
+        // query
+        $this->database->update(
+            'accounts',
+            [
+                'lastLoginTime' => date("Y-m-d H:i:s"),
+            ]
+        );
     }
 
     /**
