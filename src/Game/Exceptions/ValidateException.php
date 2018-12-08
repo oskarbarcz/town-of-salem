@@ -20,10 +20,10 @@ namespace Game\Exceptions;
 use ArchFW\Exceptions\ArchFWException;
 
 /**
- * Raised if user with given data were not found
+ * Raised when data validity fails
  *
  * @package Game\Exceptions
  */
-class UserNotFoundException extends ArchFWException
+class ValidateException extends ArchFWException
 {
 }

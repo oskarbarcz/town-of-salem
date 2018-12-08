@@ -20,7 +20,7 @@ namespace Game\Exceptions;
 use ArchFW\Exceptions\ArchFWException;
 
 /**
- * Class CardNotFoundException
+ * Raised when card were not found
  *
  * @package Game\Exceptions
  */

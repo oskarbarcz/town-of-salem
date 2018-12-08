@@ -47,6 +47,7 @@ class CardScreen extends AccountCheckHTMLRenderer
      */
     public function __construct()
     {
+        // sent out not logged people
         parent::preventUnauthorised();
         $this->Choices = new Choices(parent::data()['accountID']);
         $actID = $this->Choices->getCurrentActID();
