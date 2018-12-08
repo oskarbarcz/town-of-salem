@@ -39,7 +39,7 @@ final class DatabaseFactory
                 'database_name' => Config::get(Config::SECTION_DB, 'databaseName'),
                 'server'        => Config::get(Config::SECTION_DB, 'server'),
                 'username'      => Config::get(Config::SECTION_DB, 'user'),
-                'password'      => Config::get(Config::SECTION_DB, 'password')
+                'password'      => Config::get(Config::SECTION_DB, 'password'),
             ]
         );
     }

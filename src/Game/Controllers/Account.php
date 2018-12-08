@@ -84,16 +84,6 @@ class Account
     }
 
     /**
-     * Retrieves user data from object
-     *
-     * @return array|null
-     */
-    public function getUserData(): ?array
-    {
-        return ($this->userData) ? $this->userData : null;
-    }
-
-    /**
      * Updates last login time in database
      */
     private function updateLLT()
@@ -105,6 +95,16 @@ class Account
                 'lastLoginTime' => date("Y-m-d H:i:s"),
             ]
         );
+    }
+
+    /**
+     * Retrieves user data from object
+     *
+     * @return array|null
+     */
+    public function getUserData(): ?array
+    {
+        return ($this->userData) ? $this->userData : null;
     }
 
     /**

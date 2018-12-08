@@ -48,4 +48,14 @@ abstract class AccountCheckHTMLRenderer extends HTMLRenderer
     {
         return SessionStorage::get('User')->getUserData();
     }
+
+    /**
+     *  Redirect unauthorised users to main page
+     */
+    protected function preventUnauthorised()
+    {
+        if (!$this->logged()) {
+            header('Location: /');
+        }
+    }
 }

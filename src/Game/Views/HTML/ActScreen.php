@@ -17,22 +17,20 @@
 
 namespace Game\Views\HTML;
 
-use ArchFW\Controllers\Storage\SessionStorage;
-use ArchFW\Views\Renderers\HTMLRenderer;
-use function header;
+use Game\Views\HTML\Workers\AccountCheckHTMLRenderer;
 
 /**
- * Class DefaultRenderer
+ * Class ActScreen
  *
  * @package Game\Views\HTML
  */
-final class Logoff extends HTMLRenderer
+class ActScreen extends AccountCheckHTMLRenderer
 {
     public function __construct()
     {
-        if (SessionStorage::exist('User')) {
-            SessionStorage::set('User', null);
-        }
-        header('Location: /');
+        // authorize
+        parent::preventUnauthorised();
+
+        echo parent::render([]);
     }
 }

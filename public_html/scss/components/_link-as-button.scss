@@ -1,5 +1,4 @@
-<?php
-/**
+/*!
  * ArchFramework (ArchFW in short) is universal template for server-side rendered applications and services.
  * ArchFW comes with pre-installed router and JSON API functionality.
  * Visit https://github.com/archi-tektur/ArchFW/ for more info.
@@ -15,24 +14,23 @@
  * @link      https://github.com/archi-tektur/ArchFW/
  */
 
-namespace Game\Views\HTML;
+.link-as-button {
+    display: block;
+    background: #FEFEFE;
+    margin: 10px auto;
+    border-bottom: 3px #f89e30 solid;
+    border-radius: 2px;
+    width: 80%;
+    user-select: none;
+    cursor: pointer;
+    text-align: center;
+    padding: 7px;
+    text-decoration: none;
+    color: #444444;
+    transition: all 0.05s ease-in-out;
 
-use ArchFW\Controllers\Storage\SessionStorage;
-use ArchFW\Views\Renderers\HTMLRenderer;
-use function header;
-
-/**
- * Class DefaultRenderer
- *
- * @package Game\Views\HTML
- */
-final class Logoff extends HTMLRenderer
-{
-    public function __construct()
-    {
-        if (SessionStorage::exist('User')) {
-            SessionStorage::set('User', null);
-        }
-        header('Location: /');
+    &:hover {
+        background: #f89e30;
+        color: #FEFEFE;
     }
 }
