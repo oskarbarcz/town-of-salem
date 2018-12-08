@@ -48,8 +48,9 @@ class CardScreen extends AccountCheckHTMLRenderer
     public function __construct()
     {
         parent::preventUnauthorised();
-        $this->Card = new Card(1);
         $this->Choices = new Choices(parent::data()['accountID']);
+        $actID = $this->Choices->getCurrentActID();
+        $this->Card = new Card($actID);
         $this->assign();
         $cardData = $this->getCard();
         $this->Choices->updateLC($this->currentCard);

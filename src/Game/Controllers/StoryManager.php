@@ -46,18 +46,18 @@ class StoryManager
 
     public function initAct(int $actID): string
     {
-        $this->Choices->setActualStep($actID);
+        $this->Choices->setCurrentActID($actID);
         return $this->detectEndingFall($actID);
     }
 
     public function detectLink(): string
     {
-        $progress = $this->Choices->getActualStep();
+        $progress = $this->Choices->getCurrentActID();
 
         if ($progress === null) {
             return '/startAct/1';
         } elseif ($progress < 6 and $progress > 0) {
-            return '/card/' . $this->Choices->getActualCard();
+            return '/card/' . $this->Choices->getCurrentCardID();
         }
     }
 

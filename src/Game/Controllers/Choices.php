@@ -38,6 +38,11 @@ class Choices
 
     private $relatedAccountID;
 
+    /**
+     * Choices constructor aggigns values
+     *
+     * @param int $accountID
+     */
     public function __construct(int $accountID)
     {
         $this->database = DatabaseFactory::getInstance();
@@ -45,6 +50,8 @@ class Choices
     }
 
     /**
+     * Updates current card info
+     *
      * @param int $cardID
      */
     public function updateLC(int $cardID): void
@@ -62,9 +69,11 @@ class Choices
     }
 
     /**
-     * @return string
+     * Returns current played act ID
+     *
+     * @return int|null
      */
-    public function getActualStep(): ?int
+    public function getCurrentActID(): ?int
     {
         return $this->database->get(
             'choices',
@@ -78,9 +87,11 @@ class Choices
     }
 
     /**
-     * @return string
+     * Returns last seen card ID
+     *
+     * @return int|null
      */
-    public function getActualCard(): ?int
+    public function getCurrentCardID(): ?int
     {
         return $this->database->get(
             'choices',
@@ -95,9 +106,11 @@ class Choices
 
 
     /**
-     * @param string $stepName
+     * Sets new act ID
+     *
+     * @param int $actID
      */
-    public function setActualStep(int $actID): void
+    public function setCurrentActID(int $actID): void
     {
         $this->database->update(
             'choices',
