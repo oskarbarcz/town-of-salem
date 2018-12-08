@@ -71,4 +71,25 @@ class Card
 
         return $result;
     }
+
+    /**
+     * @param array $data
+     * @return bool
+     */
+    public static function newCard(array $data): bool
+    {
+        $database = DatabaseFactory::getInstance();
+        $result = $database->insert(
+            'cards',
+            [
+                'cardID'    => $data['cardID'],
+                'actID'     => $data['actID'],
+                'logicFlag' => false,
+                'content'   => $data['content'],
+                'linksJSON' => $data['linksJSON'],
+                'active'    => true,
+            ]
+        );
+        return $result ? true : false;
+    }
 }

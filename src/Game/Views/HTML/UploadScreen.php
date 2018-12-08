@@ -18,6 +18,7 @@
 namespace Game\Views\HTML;
 
 use ArchFW\Views\Renderers\HTMLRenderer;
+use Game\Controllers\Card;
 
 /**
  * Class UploadScreen
@@ -28,11 +29,34 @@ class UploadScreen extends HTMLRenderer
 {
     private $actID;
 
+    /**
+     * UploadScreen constructor.
+     *
+     * @throws \ArchFW\Exceptions\NoFileFoundException
+     * @throws \Twig_Error_Loader
+     * @throws \Twig_Error_Runtime
+     * @throws \Twig_Error_Syntax
+     */
     public function __construct()
     {
         $this->actID = ($_GET['act']) ? $_GET['act'] : header('Location: /uploader-choose-act');
         if ($this->catchSubmit()) {
-            $this->compose();
+            $data = $this->compose();
+            if (Card::newCard($data)) {
+                echo parent::render(
+                    [
+                        'actID' => $this->actID,
+                        'error' => 'Dodano pomyślnie!',
+                    ]
+                );
+            } else {
+                echo parent::render(
+                    [
+                        'actID' => $this->actID,
+                        'error' => 'Wystąpił jakiś błąd!',
+                    ]
+                );
+            }
         }
 
         echo parent::render(
@@ -50,10 +74,25 @@ class UploadScreen extends HTMLRenderer
         return false;
     }
 
-    private function compose()
+    private function compose(): array
     {
-        $data['still'] = [
+        $arr = [];
+        foreach ($_POST['answer'] as $key => $value) {
+            if (isset($_POST['to'][$key])) {
+                $arr[] = [
+                    'answerText' => $value,
+                    'answerLink' => $_POST['to'][$key],
+                ];
+            }
 
+        }
+        $data = [
+            'cardID'    => $_POST['cardID'],
+            'actID'     => $_GET['act'],
+            'content'   => $_POST['cardContent'],
+            'linksJSON' => json_encode($arr),
         ];
+
+        return $data;
     }
 }
