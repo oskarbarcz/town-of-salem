@@ -1,0 +1,19 @@
+{% include "common/header.twig" %}
+<div class="gui-container">
+    {% include "common/logobox.twig" %}
+    <section class="gui-box card">
+        <h2>Karta nr {{cardDetails.cardID}}</h2>
+        <article class="text">{{cardDetails.content}}</article>
+    </section>
+    <div class="gui-box-less">
+        {% for link in cardDetails.linksJSON %}
+            <a href="/{{link.answerLink}}" class="role">
+                <span class="answer">{{link.answerText}}</span>
+                <span class="fas fa-chevron-right"></span>
+            </a>
+        {% endfor %}
+    </div>
+    {% include "common/backmenu.twig" %}
+    {% include "common/footing.twig" %}
+</div>
+{% include "common/footer.twig" %}

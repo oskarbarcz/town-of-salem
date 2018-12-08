@@ -17,6 +17,7 @@
 
 namespace Game\Views\HTML;
 
+use Game\Controllers\StoryManager;
 use Game\Views\HTML\Workers\AccountCheckHTMLRenderer;
 
 /**
@@ -50,12 +51,14 @@ final class Menu extends AccountCheckHTMLRenderer
     private function compose()
     {
         if (parent::logged()) {
+            $StoryManager = new StoryManager(parent::data()['accountID']);
+
             echo parent::render(
                 [
                     'userData' => parent::data(),
                     'button'   => [
-                        'title' => 'Kontynuuj rozgrywkę',
-                        'link'  => '/startAct',
+                        'title' => 'Kontynuuj grę',
+                        'link'  => $StoryManager->detectLink(),
                     ],
                 ]
             );

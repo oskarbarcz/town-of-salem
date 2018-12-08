@@ -17,6 +17,8 @@
 
 namespace Game\Views\HTML;
 
+use ArchFW\Controllers\Router;
+use Game\Controllers\Act;
 use Game\Views\HTML\Workers\AccountCheckHTMLRenderer;
 
 /**
@@ -31,6 +33,18 @@ class ActScreen extends AccountCheckHTMLRenderer
         // authorize
         parent::preventUnauthorised();
 
+
+        $Act = new Act();
+
         echo parent::render([]);
+    }
+
+    private function assign()
+    {
+        if ($act = Router::getNthURI(2)) {
+            $this->currentAct = $act;
+        } else {
+            header('Location: /actNotFound');
+        }
     }
 }

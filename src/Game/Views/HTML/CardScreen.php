@@ -17,6 +17,10 @@
 
 namespace Game\Views\HTML;
 
+use ArchFW\Controllers\Router;
+use Game\Controllers\Card;
+use Game\Controllers\Choices;
+use Game\Exceptions\CardNotFoundException;
 use Game\Views\HTML\Workers\AccountCheckHTMLRenderer;
 
 /**
@@ -26,6 +30,13 @@ use Game\Views\HTML\Workers\AccountCheckHTMLRenderer;
  */
 class CardScreen extends AccountCheckHTMLRenderer
 {
+
+    private $currentCard;
+
+    private $Card;
+
+    private $Choices;
+
     /**
      * CardScreen constructor.
      *
@@ -37,7 +48,36 @@ class CardScreen extends AccountCheckHTMLRenderer
     public function __construct()
     {
         parent::preventUnauthorised();
+        $this->Card = new Card(1);
+        $this->Choices = new Choices(parent::data()['accountID']);
+        $this->assign();
+        $cardData = $this->getCard();
+        $this->Choices->updateLC($this->currentCard);
 
-        echo parent::render([]);
+        echo parent::render(
+            [
+                'cardDetails' => $cardData,
+            ]
+        );
+    }
+
+    private function assign(): void
+    {
+        if ($cardID = Router::getNthURI(2)) {
+            $this->currentCard = $cardID;
+        }
+    }
+
+    /**
+     * @return array
+     */
+    private function getCard(): array
+    {
+        try {
+            return $this->Card->loadCard($this->currentCard);
+        } catch (CardNotFoundException $e) {
+            header("Location: /card-not-found?referrer={$this->currentCard}");
+        }
+        return [];
     }
 }

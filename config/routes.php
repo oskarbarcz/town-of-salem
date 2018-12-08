@@ -51,6 +51,10 @@ return [
                 'class'    => 'ActScreen',
                 'template' => 'act.twig',
             ],
+            'card'         => [
+                'class'    => 'CardScreen',
+                'template' => 'card.twig',
+            ],
         ],
         'api'         => [
         ],

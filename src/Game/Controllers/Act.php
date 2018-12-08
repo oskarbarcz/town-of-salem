@@ -15,60 +15,44 @@
  * @link      https://github.com/archi-tektur/ArchFW/
  */
 
+/**
+ * Created by PhpStorm.
+ * User: Oskar Barcz
+ * Date: 08.12.2018
+ * Time: 10:55
+ */
+
 namespace Game\Controllers;
 
-use ArchFW\Models\DatabaseFactory;
-use Game\Exceptions\CardNotFoundException;
 
-/**
- * Class Card
- *
- * @package Game\Controllers
- */
-class Card
+use ArchFW\Models\DatabaseFactory;
+
+class Act
 {
     private $database;
 
-    private $actID;
-
-    /**
-     * Card constructor.
-     *
-     * @param int $actID
-     */
-    public function __construct(int $actID)
+    public function __construct()
     {
         $this->database = DatabaseFactory::getInstance();
-        $this->actID = $actID;
     }
 
     /**
-     * @param int $cardID
+     * @param int $actID
      * @return array
-     * @throws CardNotFoundException
      */
-    public function loadCard(int $cardID): array
+    public function getActDetails(int $actID): array
     {
-        $result = $this->database->get(
-            'cards',
+        $res = $this->database->get(
+            'acts',
             [
-                'cardID',
                 'actID',
-                'logicFlag',
-                'content',
-                'linksJSON',
+                'name',
+                'logoPath',
             ],
             [
-                'cardID[=]' => $cardID,
-                'actID[=]'  => $this->actID,
+                'actID[=]' => $actID,
             ]
         );
-        if (!$result) {
-            throw new CardNotFoundException("Card with ID {$cardID} in act {$this->actID} not found", 101);
-        }
-
-        $result['linksJSON'] = json_decode($result['linksJSON'], true);
-
-        return $result;
+        return ($res) ? $res : [];
     }
 }

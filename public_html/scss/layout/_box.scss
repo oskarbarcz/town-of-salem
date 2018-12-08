@@ -19,7 +19,8 @@
     align-items: center;
     flex-direction: column;
 
-    .gui-box {
+    .gui-box,
+    .gui-box-less {
         @include shadow(2);
         width: 320px;
         min-height: 20px;
@@ -57,5 +58,10 @@
             color: #FEFEFE;
         }
     }
+
+    .gui-box-less {
+        padding: 0;
+    }
+
 
 }
