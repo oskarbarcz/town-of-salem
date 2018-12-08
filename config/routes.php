@@ -47,6 +47,10 @@ return [
                 'class'    => 'Logoff',
                 'template' => 'index.twig',
             ],
+            'startAct'     => [
+                'class'    => 'ActScreen',
+                'template' => 'act.twig',
+            ],
         ],
         'api'         => [
         ],

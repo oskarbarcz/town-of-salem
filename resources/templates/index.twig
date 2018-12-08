@@ -1,6 +1,7 @@
 {% include "common/header.twig" %}
 
 <div class="gui-container">
+    {% include "common/logobox.twig" %}
     {# Incluse user box bar only if user is logged in #}
     {% if userData %}
         {% include "common/userbox.twig" %}

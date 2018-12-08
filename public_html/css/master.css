@@ -194,4 +194,32 @@
  * @license   MIT https://opensource.org/licenses/MIT
  * @version   2.7.0
  * @link      https://github.com/archi-tektur/ArchFW/
- */.userbox{display:-webkit-box;display:-ms-flexbox;display:flex;-webkit-box-orient:horizontal;-webkit-box-direction:normal;-ms-flex-direction:row;flex-direction:row;-webkit-box-pack:space-evenly;-ms-flex-pack:space-evenly;justify-content:space-evenly;-webkit-box-align:center;-ms-flex-align:center;align-items:center}.userbox .button{-webkit-box-shadow:0 1px 3px rgba(0,0,0,.12),0 1px 2px rgba(0,0,0,.24);box-shadow:0 1px 3px rgba(0,0,0,.12),0 1px 2px rgba(0,0,0,.24);border:3px solid #f89e30;background:#444;border-radius:100%;padding:8px;margin-left:40px;display:block;width:40px;height:40px;font-size:20px;color:#f89e30;-webkit-transition:all ease-in-out 50ms;transition:all ease-in-out 50ms;text-align:center}.userbox .button:hover{-webkit-transform:scale(1.05);transform:scale(1.05);-webkit-box-shadow:0 3px 6px rgba(0,0,0,.16),0 3px 6px rgba(0,0,0,.23);box-shadow:0 3px 6px rgba(0,0,0,.16),0 3px 6px rgba(0,0,0,.23);background:#fefefe;color:#444;border:3px solid #444}.userbox .details{display:-webkit-box;display:-ms-flexbox;display:flex;-webkit-box-orient:vertical;-webkit-box-direction:normal;-ms-flex-direction:column;flex-direction:column;-webkit-box-pack:justify;-ms-flex-pack:justify;justify-content:space-between;text-align:center}.userbox .details .login{margin-bottom:10px;font-size:18px;font-weight:700}.userbox .details .progress-icon{-webkit-box-shadow:0 1px 3px rgba(0,0,0,.12),0 1px 2px rgba(0,0,0,.24);box-shadow:0 1px 3px rgba(0,0,0,.12),0 1px 2px rgba(0,0,0,.24);background:#444;color:#fefefe;-webkit-user-select:none;-moz-user-select:none;-ms-user-select:none;user-select:none;padding:5px;display:inline-block;width:25px;height:25px;border-radius:100%}.userbox .details .progress-icon.current{background:red}.userbox .details .progress-icon.done{background:#f89e30}
+ */.userbox{display:-webkit-box;display:-ms-flexbox;display:flex;-webkit-box-orient:horizontal;-webkit-box-direction:normal;-ms-flex-direction:row;flex-direction:row;-webkit-box-pack:space-evenly;-ms-flex-pack:space-evenly;justify-content:space-evenly;-webkit-box-align:center;-ms-flex-align:center;align-items:center}.userbox .button{-webkit-box-shadow:0 1px 3px rgba(0,0,0,.12),0 1px 2px rgba(0,0,0,.24);box-shadow:0 1px 3px rgba(0,0,0,.12),0 1px 2px rgba(0,0,0,.24);border:3px solid #f89e30;background:#444;border-radius:100%;padding:8px;margin-left:40px;display:block;width:40px;height:40px;font-size:20px;color:#f89e30;-webkit-transition:all ease-in-out 50ms;transition:all ease-in-out 50ms;text-align:center}.userbox .button:hover{-webkit-transform:scale(1.05);transform:scale(1.05);-webkit-box-shadow:0 3px 6px rgba(0,0,0,.16),0 3px 6px rgba(0,0,0,.23);box-shadow:0 3px 6px rgba(0,0,0,.16),0 3px 6px rgba(0,0,0,.23);background:#fefefe;color:#444;border:3px solid #444}.userbox .details{display:-webkit-box;display:-ms-flexbox;display:flex;-webkit-box-orient:vertical;-webkit-box-direction:normal;-ms-flex-direction:column;flex-direction:column;-webkit-box-pack:justify;-ms-flex-pack:justify;justify-content:space-between;text-align:center}.userbox .details .login{margin-bottom:10px;font-size:18px;font-weight:700}.userbox .details .progress-icon{-webkit-box-shadow:0 1px 3px rgba(0,0,0,.12),0 1px 2px rgba(0,0,0,.24);box-shadow:0 1px 3px rgba(0,0,0,.12),0 1px 2px rgba(0,0,0,.24);background:#444;color:#fefefe;-webkit-user-select:none;-moz-user-select:none;-ms-user-select:none;user-select:none;padding:5px;display:inline-block;width:25px;height:25px;border-radius:100%}.userbox .details .progress-icon.current{background:red}.userbox .details .progress-icon.done{background:#f89e30}/*!
+ * ArchFramework (ArchFW in short) is universal template for server-side rendered applications and services.
+ * ArchFW comes with pre-installed router and JSON API functionality.
+ * Visit https://github.com/archi-tektur/ArchFW/ for more info.
+ *
+ * PHP version 7.2
+ *
+ * @category  Framework/Boilerplate
+ * @package   ArchFW
+ * @author    Oskar 'archi-tektur' Barcz <kontakt@archi-tektur.pl>
+ * @copyright 2018 Oskar 'archi_tektur' Barcz
+ * @license   MIT https://opensource.org/licenses/MIT
+ * @version   2.7.0
+ * @link      https://github.com/archi-tektur/ArchFW/
+ */.logobox{display:-webkit-box;display:-ms-flexbox;display:flex;-webkit-box-pack:center;-ms-flex-pack:center;justify-content:center;-webkit-box-align:center;-ms-flex-align:center;align-items:center}.logobox .hide{display:none}.logobox .logo{width:80%}/*!
+ * ArchFramework (ArchFW in short) is universal template for server-side rendered applications and services.
+ * ArchFW comes with pre-installed router and JSON API functionality.
+ * Visit https://github.com/archi-tektur/ArchFW/ for more info.
+ *
+ * PHP version 7.2
+ *
+ * @category  Framework/Boilerplate
+ * @package   ArchFW
+ * @author    Oskar 'archi-tektur' Barcz <kontakt@archi-tektur.pl>
+ * @copyright 2018 Oskar 'archi_tektur' Barcz
+ * @license   MIT https://opensource.org/licenses/MIT
+ * @version   2.7.0
+ * @link      https://github.com/archi-tektur/ArchFW/
+ */
