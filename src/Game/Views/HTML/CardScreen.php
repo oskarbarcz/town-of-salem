@@ -15,24 +15,29 @@
  * @link      https://github.com/archi-tektur/ArchFW/
  */
 
-namespace Game\Controllers;
+namespace Game\Views\HTML;
 
-use ArchFW\Models\DatabaseFactory;
+use Game\Views\HTML\Workers\AccountCheckHTMLRenderer;
 
 /**
- * Class Card
+ * Class CardScreen
  *
- * @package Game\Controllers
+ * @package Game\Views\HTML
  */
-class Card
+class CardScreen extends AccountCheckHTMLRenderer
 {
-    private $database;
-
-    private $actID;
-
-    public function __construct(int $actID)
+    /**
+     * CardScreen constructor.
+     *
+     * @throws \ArchFW\Exceptions\NoFileFoundException
+     * @throws \Twig_Error_Loader
+     * @throws \Twig_Error_Runtime
+     * @throws \Twig_Error_Syntax
+     */
+    public function __construct()
     {
-        $this->database = DatabaseFactory::getInstance();
-        $this->actID = $actID;
+        parent::preventUnauthorised();
+
+        echo parent::render([]);
     }
 }
