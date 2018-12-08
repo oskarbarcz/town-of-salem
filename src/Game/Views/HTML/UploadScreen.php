@@ -57,13 +57,13 @@ class UploadScreen extends HTMLRenderer
                     ]
                 );
             }
+        } else {
+            echo parent::render(
+                [
+                    'actID' => $this->actID,
+                ]
+            );
         }
-
-        echo parent::render(
-            [
-                'actID' => $this->actID,
-            ]
-        );
     }
 
     private function catchSubmit()

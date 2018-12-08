@@ -40,6 +40,7 @@ final class DatabaseFactory
                 'server'        => Config::get(Config::SECTION_DB, 'server'),
                 'username'      => Config::get(Config::SECTION_DB, 'user'),
                 'password'      => Config::get(Config::SECTION_DB, 'password'),
+                'charset'       => 'utf8mb4',
             ]
         );
     }

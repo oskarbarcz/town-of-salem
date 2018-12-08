@@ -90,6 +90,6 @@ class Card
                 'active'    => true,
             ]
         );
-        return $result ? true : false;
+        return ($result->rowCount() === 1) ? true : false;
     }
 }

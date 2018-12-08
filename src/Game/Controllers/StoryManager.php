@@ -64,7 +64,7 @@ class StoryManager
     public function detectEndingFall(int $actID)
     {
         if ($actID === 1) {
-            return '/card/1';
+            return '/card/100';
         }
     }
 }

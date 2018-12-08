@@ -42,7 +42,7 @@ return [
 
     // Every page has
     'metaConfig'       => [
-        'pageTitle'       => 'ArchFW installed!',
+        'pageTitle'       => 'Town of Salem - The PHP text game',
         'pageEncoding'    => 'UTF-8'/* NOT NULL*/,
         'pageLanguage'    => 'pl'/* NOT NULL*/,
         'pageDescription' => '',

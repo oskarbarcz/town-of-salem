@@ -9,13 +9,13 @@
             <textarea class="textarea" name="cardContent" placeholder="treść karty, przeciągając w prawym dolnym rogu
             możecie powiększyć te pole" required></textarea>
             <input name="answer[]" placeholder="odpowiedź 1" type="text">
-            <input name="to[]" placeholder="karta do odp 1" type="number" step="1">
+            <input name="to[]" placeholder="/card/{int} lub /startAct/{int}" type="text">
             <input name="answer[]" placeholder="odpowiedź 2" type="text">
-            <input name="to[]" placeholder="karta do odp 2" type="number" step="1">
+            <input name="to[]" placeholder="/card/{int} lub /startAct/{int}" type="text">
             <input name="answer[]" placeholder="odpowiedź 3" type="text">
-            <input name="to[]" placeholder="karta do odp 3" type="number" step="1">
+            <input name="to[]" placeholder="/card/{int} lub /startAct/{int}" type="text">
             <input name="answer[]" placeholder="odpowiedź 4" type="text">
-            <input name="to[]" placeholder="karta do odp 4" type="number" step="1">
+            <input name="to[]" placeholder="/card/{int} lub /startAct/{int}" type="text">
             <input type="submit" name="submitted" value="Dodaj">
         </form>
     </div>
@@ -24,5 +24,6 @@
             <span>{{error}}</span>
         </div>
     {% endif %}
+    {% include "common/backmenu.twig" %}
     {% include "common/footing.twig" %}
 </div>
