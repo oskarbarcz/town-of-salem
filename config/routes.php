@@ -55,6 +55,10 @@ return [
                 'class'    => 'CardScreen',
                 'template' => 'card.twig',
             ],
+            'card-not-found'      => [
+                'class'    => 'Workers\DefaultHTMLRenderer',
+                'template' => '404.twig',
+            ],
             #comment to disable
             'uploader-choose-act' => [
                 'class'    => 'Workers\DefaultHTMLRenderer',
