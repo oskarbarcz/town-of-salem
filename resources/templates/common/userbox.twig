@@ -2,11 +2,44 @@
     <div class="details">
         <span class="login">{{userData.login}}</span>
         <span class="progress" title="Aktualny postęp w grze">
-            <span class="progress-icon done">P</span>
-            <span class="progress-icon current">1</span>
-            <span class="progress-icon">2</span>
-            <span class="progress-icon">3</span>
-            <span class="progress-icon">E</span>
+            {% if progress == 1 %}
+                    <span class="progress-icon current">P</span>
+                    <span class="progress-icon">1</span>
+                    <span class="progress-icon">2</span>
+                    <span class="progress-icon">3</span>
+                    <span class="progress-icon">E</span>
+            {% elseif progress == 2 %}
+                    <span class="progress-icon done">P</span>
+                    <span class="progress-icon current">1</span>
+                    <span class="progress-icon">2</span>
+                    <span class="progress-icon">3</span>
+                    <span class="progress-icon">E</span>
+            {% elseif progress == 3 %}
+                    <span class="progress-icon done">P</span>
+                    <span class="progress-icon done">1</span>
+                    <span class="progress-icon current">2</span>
+                    <span class="progress-icon">3</span>
+                    <span class="progress-icon">E</span>
+            {% elseif progress == 4 %}
+                    <span class="progress-icon done">P</span>
+                    <span class="progress-icon done">1</span>
+                    <span class="progress-icon done">2</span>
+                    <span class="progress-icon current">3</span>
+                    <span class="progress-icon">E</span>
+            {% elseif progress == 5 %}
+                    <span class="progress-icon done">P</span>
+                    <span class="progress-icon done">1</span>
+                    <span class="progress-icon done">2</span>
+                    <span class="progress-icon done">3</span>
+                    <span class="progress-icon current">E</span>
+                {% else %}
+                    <span class="progress-icon">P</span>
+                    <span class="progress-icon">1</span>
+                    <span class="progress-icon">2</span>
+                    <span class="progress-icon">3</span>
+                    <span class="progress-icon">E</span>
+            {% endif %}
+
         </span>
     </div>
     <a class="button" href="/logoff"><span class="fas fa-sign-out-alt" aria-label="Wyloguj użytkownika" title="Wyloguj

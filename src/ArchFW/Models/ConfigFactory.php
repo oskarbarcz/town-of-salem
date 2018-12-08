@@ -24,7 +24,7 @@ use function file_exists;
 /**
  * Class ConfigFactory loads file arrays to initial Config object
  *
- * @package ArchFW\Model
+ * @package ArchFW\Models
  */
 class ConfigFactory
 {

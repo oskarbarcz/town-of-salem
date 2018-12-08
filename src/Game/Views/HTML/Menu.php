@@ -17,6 +17,7 @@
 
 namespace Game\Views\HTML;
 
+use Game\Controllers\Choices;
 use Game\Controllers\StoryManager;
 use Game\Views\HTML\Workers\AccountCheckHTMLRenderer;
 
@@ -52,10 +53,12 @@ final class Menu extends AccountCheckHTMLRenderer
     {
         if (parent::logged()) {
             $StoryManager = new StoryManager(parent::data()['accountID']);
+            $Choices = new Choices(parent::data()['accountID']);
 
             echo parent::render(
                 [
                     'userData' => parent::data(),
+                    'progress' => $Choices->getCurrentActID(),
                     'button'   => [
                         'title' => 'Kontynuuj grę',
                         'link'  => $StoryManager->detectLink(),
