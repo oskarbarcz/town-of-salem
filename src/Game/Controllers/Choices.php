@@ -64,29 +64,46 @@ class Choices
     /**
      * @return string
      */
-    public function getActualStep(): ?string
+    public function getActualStep(): ?int
     {
         return $this->database->get(
             'choices',
             [
-                'actualStep',
+                'currentActID',
             ],
             [
                 'accountID[=]' => $this->relatedAccountID,
             ]
-        )['actualStep'];
+        )['currentActID'];
     }
+
+    /**
+     * @return string
+     */
+    public function getActualCard(): ?int
+    {
+        return $this->database->get(
+            'choices',
+            [
+                'currentCardID',
+            ],
+            [
+                'accountID[=]' => $this->relatedAccountID,
+            ]
+        )['currentCardID'];
+    }
+
 
     /**
      * @param string $stepName
      */
-    public function setActualStep(string $stepName): void
+    public function setActualStep(int $actID): void
     {
         $this->database->update(
             'choices',
             [
-                'actualStep' => $stepName,
-                'lastUpdate' => date('Y-m-d H:i:s'),
+                'currentActID' => $actID,
+                'lastUpdate'   => date('Y-m-d H:i:s'),
             ],
             [
                 'accountID[=]' => $this->relatedAccountID,

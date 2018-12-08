@@ -1,0 +1,81 @@
+/*!
+ * ArchFramework (ArchFW in short) is universal template for server-side rendered applications and services.
+ * ArchFW comes with pre-installed router and JSON API functionality.
+ * Visit https://github.com/archi-tektur/ArchFW/ for more info.
+ *
+ * PHP version 7.2
+ *
+ * @category  Framework/Boilerplate
+ * @package   ArchFW
+ * @author    Oskar 'archi-tektur' Barcz <kontakt@archi-tektur.pl>
+ * @copyright 2018 Oskar 'archi_tektur' Barcz
+ * @license   MIT https://opensource.org/licenses/MIT
+ * @version   2.7.0
+ * @link      https://github.com/archi-tektur/ArchFW/
+ */
+.form {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+
+    label {
+        display: none;
+    }
+
+    label.vis {
+        display: block;
+    }
+
+    input, button[type=submit], textarea.textarea {
+        @include shadow(1);
+        font-family: "Signika Negative", sans-serif;
+        font-size: 16px;
+        width: 240px;
+        margin: 2px auto;
+        background: #FEFEFE;
+        outline: none;
+        border: none;
+        border-bottom: 3px #f89e30 solid;
+        text-align: center;
+        padding: 6px;
+        border-radius: 5px;
+        transition: all 0.05s ease-in-out;
+        color: #444444;
+
+        textarea.textarea {
+            height: 300px;
+            min-width: 240px;
+            max-height: 500px;
+            resize: vertical;
+        }
+
+        &[type=submit],
+        button[type=submit] {
+            padding: 7px 4px 4px 4px;
+            background: #f89e30;
+            color: #FEFEFE;
+            position: relative;
+            cursor: pointer;
+
+            span {
+                position: absolute;
+                top: 9px;
+                right: 20px;
+            }
+
+            &:hover {
+                color: #F1F1F1;
+            }
+        }
+
+        &:hover {
+            @include shadow(2);
+        }
+
+        &:focus {
+            background: rgba(255, 163, 49, 0.2);
+        }
+
+
+    }
+}

@@ -1,0 +1,29 @@
+{% include "common/header.twig" %}
+<div class="gui-container">
+    {% include "common/logobox.twig" %}
+    <div class="gui-box">
+        <h2>Dodaj kartkę do aktu {{actID}}</h2>
+        <p>Jeżeli karta nie uwzględnia więcej pól niż np. 3, nie musicie uzupełniać wszystkich.</p>
+        <form class="form" method="post" action="uploader/?act={{actID}}">
+            <input name="cardID" placeholder="numer karty" type="number" step="1" required>
+            <textarea class="textarea" name="cardContent" placeholder="treść karty, przeciągając w prawym dolnym rogu
+            możecie powiększyć te pole" required></textarea>
+            <input name="answer[]" placeholder="odpowiedź 1" type="text" required>
+            <input name="to[]" placeholder="karta do odp 1" type="number" step="1" required>
+            <input name="answer[]" placeholder="odpowiedź 2" type="text">
+            <input name="to[]" placeholder="karta do odp 2" type="number" step="1" required>
+            <input name="answer[]" placeholder="odpowiedź 3" type="text">
+            <input name="to[]" placeholder="karta do odp 3" type="number" step="1" required>
+            <input name="answer[]" placeholder="odpowiedź 4" type="text">
+            <input name="to[]" placeholder="karta do odp 4" type="number" step="1" required>
+
+            <input type="submit" name="submitted" value="Dodaj">
+        </form>
+    </div>
+    {% if error %}
+        <div class="gui-box error">
+            <span>{{error}}</span>
+        </div>
+    {% endif %}
+    {% include "common/footing.twig" %}
+</div>

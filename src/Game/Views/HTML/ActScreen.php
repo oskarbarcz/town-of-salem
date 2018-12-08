@@ -19,6 +19,7 @@ namespace Game\Views\HTML;
 
 use ArchFW\Controllers\Router;
 use Game\Controllers\Act;
+use Game\Controllers\StoryManager;
 use Game\Views\HTML\Workers\AccountCheckHTMLRenderer;
 
 /**
@@ -28,23 +29,44 @@ use Game\Views\HTML\Workers\AccountCheckHTMLRenderer;
  */
 class ActScreen extends AccountCheckHTMLRenderer
 {
+    private $currentAct;
+
+    /**
+     * ActScreen constructor.
+     *
+     * @throws \ArchFW\Exceptions\NoFileFoundException
+     * @throws \Twig_Error_Loader
+     * @throws \Twig_Error_Runtime
+     * @throws \Twig_Error_Syntax
+     */
     public function __construct()
     {
         // authorize
         parent::preventUnauthorised();
-
-
+        $this->assign();
+        $StoryManager = new StoryManager(parent::data()['accountID']);
         $Act = new Act();
+        $details = $Act->getActDetails($this->currentAct);
+        $link = $StoryManager->initAct($details['actID']);
 
-        echo parent::render([]);
+
+        echo parent::render(
+            [
+                'actDetails' => $details,
+                'link'       => $link,
+            ]
+        );
     }
 
+    /**
+     * Asigns value
+     */
     private function assign()
     {
         if ($act = Router::getNthURI(2)) {
             $this->currentAct = $act;
         } else {
-            header('Location: /actNotFound');
+            header('Location: /');
         }
     }
 }

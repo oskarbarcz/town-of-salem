@@ -3,10 +3,10 @@
     {% include "common/logobox.twig" %}
     <section class="gui-box">
         <main class="act">
-            <img src="/img/acts/prolog.jpg" alt="Obraz jest okładką aktu" class="layer">
-            <span class="title">Prolog</span>
+            <img src="/img/{{actDetails.logoPath}}" alt="Obraz jest okładką aktu" class="layer">
+            <span class="title">{{actDetails.name}}</span>
         </main>
-        <a href="card/1" class="link-as-button">Zacznij prolog</a>
+        <a href="{{link}}" class="link-as-button">Rozpocznij akt</a>
     </section>
     {% include "common/backmenu.twig" %}
     {% include "common/footing.twig" %}

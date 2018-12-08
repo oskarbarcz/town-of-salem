@@ -44,22 +44,27 @@ class StoryManager
         $this->Choices = new Choices($this->accountID);
     }
 
+    public function initAct(int $actID): string
+    {
+        $this->Choices->setActualStep($actID);
+        return $this->detectEndingFall($actID);
+    }
+
     public function detectLink(): string
     {
         $progress = $this->Choices->getActualStep();
 
         if ($progress === null) {
             return '/startAct/1';
-        } elseif ($progress === 'prolog') {
+        } elseif ($progress < 6 and $progress > 0) {
+            return '/card/' . $this->Choices->getActualCard();
+        }
+    }
 
-        } elseif ($progress === 'act1') {
-
-        } elseif ($progress === 'act2') {
-
-        } elseif ($progress === 'act3') {
-
-        } elseif ($progress === 'epilog') {
-
+    public function detectEndingFall(int $actID)
+    {
+        if ($actID === 1) {
+            return '/card/1';
         }
     }
 }

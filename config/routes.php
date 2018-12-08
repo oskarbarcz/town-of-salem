@@ -31,30 +31,40 @@ return [
      */
     'routingPaths'         => [
         'application' => [
-            ''             => [
+            ''                    => [
                 'class'    => 'Menu',
                 'template' => 'index.twig',
             ],
-            'login-choose' => [
+            'login-choose'        => [
                 'class'    => 'Workers\DefaultHTMLRenderer',
                 'template' => 'login-choose.twig',
             ],
-            'login'        => [
+            'login'               => [
                 'class'    => 'LoginScreen',
                 'template' => 'login.twig',
             ],
-            'logoff'       => [
+            'logoff'              => [
                 'class'    => 'Logoff',
                 'template' => 'index.twig',
             ],
-            'startAct'     => [
+            'startAct'            => [
                 'class'    => 'ActScreen',
                 'template' => 'act.twig',
             ],
-            'card'         => [
+            'card'                => [
                 'class'    => 'CardScreen',
                 'template' => 'card.twig',
             ],
+            #comment to disable
+            'uploader-choose-act' => [
+                'class'    => 'Workers\DefaultHTMLRenderer',
+                'template' => 'utils\uploader-choose.twig',
+            ],
+            'uploader'            => [
+                'class'    => 'UploadScreen',
+                'template' => 'utils\uploader.twig',
+            ],
+            #end
         ],
         'api'         => [
         ],
