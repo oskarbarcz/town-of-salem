@@ -78,7 +78,7 @@ class UploadScreen extends HTMLRenderer
     {
         $arr = [];
         foreach ($_POST['answer'] as $key => $value) {
-            if (isset($_POST['to'][$key])) {
+            if ($_POST['to'][$key] != "") {
                 $arr[] = [
                     'answerText' => $value,
                     'answerLink' => $_POST['to'][$key],
