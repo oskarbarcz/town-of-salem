@@ -66,5 +66,6 @@ class StoryManager
         if ($actID === 1) {
             return '/card/100';
         }
+        return 1;
     }
 }

@@ -59,6 +59,14 @@ return [
                 'class'    => 'Workers\DefaultHTMLRenderer',
                 'template' => '404.twig',
             ],
+            'authors'             => [
+                'class'    => 'Workers\DefaultHTMLRenderer',
+                'template' => 'authors.twig',
+            ],
+            'about'               => [
+                'class'    => 'Workers\DefaultHTMLRenderer',
+                'template' => 'about.twig',
+            ],
             #comment to disable
             'uploader-choose-act' => [
                 'class'    => 'Workers\DefaultHTMLRenderer',

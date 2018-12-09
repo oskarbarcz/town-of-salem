@@ -50,25 +50,45 @@
         text-align: center;
 
         .login {
+            font-family: 'PT Sans', sans-serif;
             margin-bottom: 10px;
             font-size: 18px;
             font-weight: bold;
+
+            span {
+                padding-right: 10px;
+            }
         }
 
         .progress {
+            display: flex;
+            justify-content: center;
+            @include shadow(1);
+            border-radius: 5px;
+            background: #f89e30;
+
             &-icon {
-                @include shadow(1);
                 background: #444444;
                 color: #FEFEFE;
                 user-select: none;
                 padding: 5px;
                 display: inline-block;
-                width: 25px;
+                width: 30px;
                 height: 25px;
-                border-radius: 100%;
+                margin: 0;
+                //border-radius: 100%;
+
+                &:first-of-type {
+                    border-radius: 5px 0 0 5px;
+                }
+
+                &:last-of-type {
+                    border-radius: 0 5px 5px 0;
+                }
 
                 &.current {
                     background: red;
+                    @include shadow(1);
                 }
 
                 &.done {
