@@ -19,6 +19,7 @@ namespace Game\Controllers;
 
 use ArchFW\Models\DatabaseFactory;
 use Game\Exceptions\UserNotFoundException;
+use Game\Models\AccountData;
 use Medoo\Medoo;
 
 /**
@@ -105,6 +106,37 @@ class Account
     public function getUserData(): ?array
     {
         return ($this->userData) ? $this->userData : null;
+    }
+
+    /**
+     * @param string $login
+     * @return bool
+     */
+    public static function exists(string $login): bool
+    {
+        $database = DatabaseFactory::getInstance();
+        return $database->has(
+            'accounts',
+            [
+                'login[=]' => $login,
+            ]
+        );
+    }
+
+    public static function add(AccountData $Data): void
+    {
+        $database = DatabaseFactory::getInstance();
+        $database->insert(
+            'accounts',
+            [
+                'accountID'     => null,
+                'login'         => $Data->getLogin(),
+                'password'      => $Data->getPassword(),
+                'lastLoginTime' => null,
+                'registerTime'  => date('Y-m-d H:i:s'),
+                '',
+            ]
+        );
     }
 
     /**

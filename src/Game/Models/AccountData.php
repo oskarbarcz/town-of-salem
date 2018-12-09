@@ -17,6 +17,7 @@
 
 namespace Game\Models;
 
+use Game\Controllers\Account;
 use Game\Exceptions\ValidateException;
 
 /**
@@ -24,7 +25,7 @@ use Game\Exceptions\ValidateException;
  *
  * @package Game\Models
  */
-class UsersData
+class AccountData
 {
     private $login;
 
@@ -41,8 +42,26 @@ class UsersData
     {
         // validate length
         if (strlen($this->login) < 3 and strlen($this->login) > 32) {
-            throw new ValidateException('Login musi zawierać od 4 do 32 znaków.', 101);
+            throw new ValidateException('Login musi zawierać od 4 do 32 znaków', 101);
+        } elseif (Account::exists($this->login)) {
+            throw new ValidateException('Użytkownik o takim loginie już istnieje', 102);
         }
         return true;
+    }
+
+    /**
+     * @return string
+     */
+    public function getLogin(): string
+    {
+        return $this->login;
+    }
+
+    /**
+     * @return string
+     */
+    public function getPassword(): string
+    {
+        return $this->password;
     }
 }
