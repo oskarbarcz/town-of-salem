@@ -31,6 +31,13 @@ class AccountData
 
     private $password;
 
+    /**
+     * AccountData constructor.
+     *
+     * @param string $login
+     * @param string $password
+     * @throws ValidateException
+     */
     public function __construct(string $login, string $password)
     {
         $this->login = $login;
@@ -38,6 +45,10 @@ class AccountData
         $this->validate();
     }
 
+    /**
+     * @return bool
+     * @throws ValidateException
+     */
     private function validate(): bool
     {
         // validate length

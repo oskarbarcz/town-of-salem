@@ -2,13 +2,15 @@
 
 <div class="gui-container">
     <div class="gui-box">
-        <h2>Logowanie</h2>
+        <h2>Rejestracja</h2>
+        <p>Nie wymagamy dużo, jedynie login i hasło. Do utworzonego konta przypisane zostaną zapisy gry. Wiemy że
+            nie potrzebujesz tutaj skomplikowanego hasła, dlatego nie wymagamy by było silne.</p>
         <form class="form" method="post" action="/login">
             <label for="login">Login</label>
             <input name="login" id="login" type="text" placeholder="login" required>
             <label for="password">Password</label>
             <input name="password" id="password" type="password" placeholder="hasło" required>
-            <button type="submit">Zaloguj<span class="fas fa-chevron-right"></span></button>
+            <button type="submit">Zarejestruj<span class="fas fa-chevron-right"></span></button>
         </form>
     </div>
     {% if error %}
