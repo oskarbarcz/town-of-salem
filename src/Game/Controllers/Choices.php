@@ -104,7 +104,6 @@ class Choices
         )['currentCardID'];
     }
 
-
     /**
      * Sets new act ID
      *
@@ -120,6 +119,25 @@ class Choices
             ],
             [
                 'accountID[=]' => $this->relatedAccountID,
+            ]
+        );
+    }
+
+    /**
+     * @param int $accountID
+     */
+    public static function initNewUser(int $accountID): void
+    {
+        $database = DatabaseFactory::getInstance();
+        $database->insert(
+            'choices',
+            [
+                'choiceID'      => null,
+                'accountID'     => $accountID,
+                'currentActID'  => null,
+                'currentCardID' => null,
+                'lastUpdate'    => null,
+                'gameStartTime' => date('Y-m-d H:i:s'),
             ]
         );
     }

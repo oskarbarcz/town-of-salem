@@ -37,6 +37,11 @@ class StoryManager
     private $accountID;
     private $Choices;
 
+    /**
+     * StoryManager constructor.
+     *
+     * @param string $accountID
+     */
     public function __construct(string $accountID)
     {
         $this->Database = DatabaseFactory::getInstance();
@@ -44,12 +49,19 @@ class StoryManager
         $this->Choices = new Choices($this->accountID);
     }
 
+    /**
+     * @param int $actID
+     * @return string
+     */
     public function initAct(int $actID): string
     {
         $this->Choices->setCurrentActID($actID);
         return $this->detectEndingFall($actID);
     }
 
+    /**
+     * @return string
+     */
     public function detectLink(): string
     {
         $progress = $this->Choices->getCurrentActID();
@@ -61,10 +73,22 @@ class StoryManager
         }
     }
 
+    /**
+     * @param int $actID
+     * @return int|string
+     */
     public function detectEndingFall(int $actID)
     {
         if ($actID === 1) {
-            return '/card/100';
+            return '/card/10001';
+        } elseif ($actID === 2) {
+            return '/card/11001';
+        } elseif ($actID === 3) {
+            return '/card/12001';
+        } elseif ($actID === 4) {
+            return '/card/13001';
+        } elseif ($actID === 5) {
+            return '/card/14001';
         }
         return 1;
     }

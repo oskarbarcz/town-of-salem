@@ -1,15 +1,17 @@
 {% include "common/header.twig" %}
-
 <div class="gui-container">
+    {% include "common/logobox.twig" %}
     <div class="gui-box">
         <h2>Rejestracja</h2>
         <p>Nie wymagamy dużo, jedynie login i hasło. Do utworzonego konta przypisane zostaną zapisy gry. Wiemy że
             nie potrzebujesz tutaj skomplikowanego hasła, dlatego nie wymagamy by było silne.</p>
-        <form class="form" method="post" action="/login">
+        <form class="form" method="post" action="/register">
             <label for="login">Login</label>
             <input name="login" id="login" type="text" placeholder="login" required>
-            <label for="password">Password</label>
+            <label for="password">hasło</label>
             <input name="password" id="password" type="password" placeholder="hasło" required>
+            <label for="repeated">powtórz hasło</label>
+            <input name="repeated" id="repeated" type="password" placeholder="potwórz hasło" required>
             <button type="submit">Zarejestruj<span class="fas fa-chevron-right"></span></button>
         </form>
     </div>

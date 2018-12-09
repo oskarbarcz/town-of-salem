@@ -69,7 +69,7 @@ class Account
             ],
             [
                 'login[=]'    => $login,
-                'password[=]' => $password,
+                'password[=]' => hash('sha256', $password),
                 'active[=]'   => true,
             ]
         );
@@ -123,6 +123,9 @@ class Account
         );
     }
 
+    /**
+     * @param AccountData $Data
+     */
     public static function add(AccountData $Data): void
     {
         $database = DatabaseFactory::getInstance();
@@ -134,9 +137,20 @@ class Account
                 'password'      => $Data->getPassword(),
                 'lastLoginTime' => null,
                 'registerTime'  => date('Y-m-d H:i:s'),
-                '',
+                'active'        => true,
             ]
         );
+
+        $accID = $database->get(
+            'accounts',
+            [
+                'accountID',
+            ],
+            [
+                'login[=]' => $Data->getLogin(),
+            ]
+        )['accountID'];
+        Choices::initNewUser($accID);
     }
 
     /**

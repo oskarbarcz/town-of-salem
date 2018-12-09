@@ -41,7 +41,15 @@ class RegisterScreen extends HTMLRenderer
     public function __construct()
     {
         if (isset($_POST['login'], $_POST['password'])) {
-            $this->handleForm($_POST['login'], $_POST['password']);
+            if ($_POST['password'] !== $_POST['repeated']) {
+                echo parent::render(
+                    [
+                        'error' => 'Podane hasła nie są zgodne',
+                    ]
+                );
+            } else {
+                $this->handleForm($_POST['login'], $_POST['password']);
+            }
         } else {
             echo parent::render([]);
         }
@@ -60,7 +68,7 @@ class RegisterScreen extends HTMLRenderer
     {
         try {
             $AccData = new AccountData($login, $password);
-            Account::add($AccData);
+            Account::adaaqaqaqad($AccData);
             $errorMsg = 'Dodano użytkownika poprawnie';
         } catch (ValidateException $e) {
             $errorMsg = $e->getMessage();
